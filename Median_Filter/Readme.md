@@ -1,14 +1,4 @@
-﻿`            `**Laboratory Exercise 5** 
-
 **Median Filtering** 
-
-SHARAN VIDASH V S Performed 10/11/2019 Submitted 10/18/2019 
-
-Instructor:  Dr.Sonia Lopez Alarcon TA: Stephanie 
-
-Lecture Section 5 
-
-Professor:  Dr.Sonia Lopez Alarcon 
 
 **Abstract:** 
 
@@ -30,7 +20,9 @@ When shared memory was implemented, each block was copied into the shared memory
 
 When using shared memory, we also have to consider banking problems. We overcame different threads accessing the same bank by setting a bigger shared memory block than the tile size. We used (TILE\_WIDTH +2) x (TILE\_WIDTH +2) dimension. The other boundary condition checks and sorting algorithm is same as the one used for GPU implementation without shared memory. 
 
-**Results:** Lenna.bmp: 
+**Results:** 
+
+Lenna.bmp: 
 
 ![](Lab05\_Report\_pdf(1).002.png)
 
@@ -72,57 +64,21 @@ The output shows that the filtering is same for all three implementations with a
 | - | - | :- | :- | - | :- | :- |
 |Lenna.bmp |52480 |67.5 |1.4 |48.214 |1.4 |48.214 |
 |Milkyway.bmp |8000000 |9700 |69 |140.579 |70 |138.57 |
-GPU Global Memory Speedup![](Lab05\_Report\_pdf(1).008.png)
 
-160 140 120 100 80 60 40
 
-20 0
+![](Lab05\_Report\_pdf(1).008.png)
 
-0 2000000 4000000 6000000 8000000 10000000
+GPU Global Memory Speedup
 
-GPU Global Speedup
+![](Lab05\_Report\_pdf(1).009.png)
 
-GPU Shared Memory Speedup![](Lab05\_Report\_pdf(1).009.png)
-
-160
-
-140
-
-120
-
-100
-
-80
-
-60
-
-40
-
-20
-
-0
-
-0 2000000 4000000 6000000 8000000 10000000
-
-GPU Shared Speedup
+GPU Shared Memory Speedup
 
 Analysis: 
 
 The speedup is very similar on both the shared and global memory implementations of the GPU. This could be attributed to a less efficient implementation of the shared memory and also declaring unused threads to prevent illegal memory accesses. 
 
-**Questions:** 
-
-1. When using larger window sizes, each thread will take a longer time to calculate and sort the window since it’s a sequential process and we lose parallelism. Even if using a separate kernel for the filter sorting, there is wait for synchronization which ultimately leads to lower speedup. 
-1. Block size = 31 x 31 
-
-Windows size = 3x 3 
-
-Since we have a shared memory block size of 33 x 33, which is a multiple of 3 and shared memory is greater than the block size, we have 100% utilization. 
-
-3. Texture memory and constant memory are both good choices since they have low latency and are read only. Texture memory would be a better choice as it is also a read only memory like constant but is more optimized for spatial locality which makes it easier to access the element around much easily.  Constraints would be that the block must be small enough to accommodate within the cache. 
-
 **Conclusion:** 
 
 Median Filtering was established on both the CPU and the GPU with 2 variations on the GPU. Speedup was observed on both the shared memory implementation and global memory implementation due to lower latency access and parallel nature of the problem. The speedup is not as expected because of an improper shared memory implementation. More speedup could be achieved ifvalues copied to the shared memory is done in an efficient way.  
 
-![](Lab05\_Report\_pdf(1).010.png)
