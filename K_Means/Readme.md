@@ -1,14 +1,4 @@
-﻿`            `**Laboratory Exercise 6** 
-
 **K-Means Clustering** 
-
-SHARAN VIDASH V S Performed 10/18/2019 Submitted 10/25/2019 
-
-Instructor:  Dr.Sonia Lopez Alarcon TA: Stephanie 
-
-Lecture Section 6 
-
-Professor:  Dr.Sonia Lopez Alarcon 
 
 **Abstract:** 
 
@@ -55,13 +45,11 @@ The GPU implementation was achieved by assigning the parallel part of the code i
 |8388608 |19803 |4006 |4.943335 |11.5779 |
 |16777216 |47642 |9586 |4.969956 |11.5828 |
 |33554432 |79626 |15973 |4.985037 |11.5679 |
-GPU Speedup![](LabReport6pdf.005.png)
 
-6 5 4 3 2 1 0
+![](LabReport6pdf.005.png)
+*Figure 5 Speedup plot Size Vs Speedup:* 
 
-0 10000000 20000000 30000000 40000000 *Figure 5 Speedup plot Size Vs Speedup:* 
-
-Result Analysis: 
+**Result Analysis:**
 
 The results shows that speedup is observed on the GPU due to uses of parallelism and usage of constant memory. The average speedup is about 4. We also notice a value in the speedup where the speedup is slightly lesser, but once there are a huge number of threads, the GPU performs consistently. 
 
@@ -69,7 +57,7 @@ The results shows that speedup is observed on the GPU due to uses of parallelism
 
 1. You used constant memory as part of this implementation. Why does it make sense to use constant memory for the clusters? What is the maximum number of clusters that you could store in constant memory?   
 
-**Ans:**  
+Ans:
 
 Constant memory was right for implementing as they have very low latency access and are useful when several threads are accessing the same locations repeatedly. Here, during assignment, all the threads are accessing the clusters’ means at the same time.   
 
@@ -79,7 +67,7 @@ Constant memory can store maximum 64KB of data, that is 64\*1024 = 65536. Theref
 
 2. Could you have used constant memory for the data points as well? Make sure that your answers are very specific and include concrete numbers to back up your claim.** 
 
-**Ans:** 
+Ans: 
 
 There are a huge number of data points and would overfill the constant memory and would not be suitable to use constant memory for the data points.  
 
@@ -89,4 +77,3 @@ Each datapoint is a datatype of Datapoint which occupies 16 bytes (returned by t
 
 Implementations were done on both the CPU and GPU and checked for speedup. The GPU performed better due to the bottlenecking part of the code was parallelizable. The constraints on constant memory was also analysed due to the small size of the constant memory. Using these constraints, proper utilization of the constant memory could be done. There was also an understanding of the parts that GPUs are good at and CPU were good at. This understanding was used to only implement a part of the code on the GPU kernel and the rest was done on the host side code. 
 
-![](LabReport6pdf.006.png)
