@@ -14,7 +14,7 @@ The GPU implementation varied in 2 types, one not using shared memory and the ot
 
 When shared memory was implemented, each block was copied into the shared memory for faster access. The issue with shared memory was that boundary elements in each block would not have elements to access. This problem was solved by using a padding of zeros around the block. The edges of the block had 0 to support accessing the filter elements. 
 
-![](Lab05\_Report\_pdf(1).001.png)
+![](images/Lab05\_Report\_pdf(1).001.png)
 
 *Figure 1: Example of Zero padding around the block* 
 
@@ -24,15 +24,15 @@ When using shared memory, we also have to consider banking problems. We overcame
 
 Lenna.bmp: 
 
-![](Lab05\_Report\_pdf(1).002.png)
+![](images/Lab05\_Report\_pdf(1).002.png)
 
 *Figure 2 Output for Lenna.bmp* 
 
-![](Lab05\_Report\_pdf(1).003.png)
+![](images/Lab05\_Report\_pdf(1).003.png)
 
 *Figure 3 Input Image for Lenna.bmp* 
 
-![](Lab05\_Report\_pdf(1).004.png)
+![](images/Lab05\_Report\_pdf(1).004.png)
 
 *Figure 4 Output Image for Lenna.bmp* 
 
@@ -42,15 +42,15 @@ The output shows that the filtering is same for all three implementations with a
 
 Milkyway.bmp: 
 
-![](Lab05\_Report\_pdf(1).005.png)
+![](images/Lab05\_Report\_pdf(1).005.png)
 
 *Figure 5 Output for milkyway.bmp* 
 
-![](Lab05\_Report\_pdf(1).006.png)
+![](images/Lab05\_Report\_pdf(1).006.png)
 
 *Figure 6 Input Image for Milkyway.bmp* 
 
-![](Lab05\_Report\_pdf(1).007.png)
+![](images/Lab05\_Report\_pdf(1).007.png)
 
 *Figure 7 Output Image for Milkyway.bmp* 
 
@@ -66,11 +66,11 @@ The output shows that the filtering is same for all three implementations with a
 |Milkyway.bmp |8000000 |9700 |69 |140.579 |70 |138.57 |
 
 
-![](Lab05\_Report\_pdf(1).008.png)
+![](images/Lab05\_Report\_pdf(1).008.png)
 
 GPU Global Memory Speedup
 
-![](Lab05\_Report\_pdf(1).009.png)
+![](images/Lab05\_Report\_pdf(1).009.png)
 
 GPU Shared Memory Speedup
 
