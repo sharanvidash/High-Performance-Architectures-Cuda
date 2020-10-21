@@ -47,7 +47,8 @@ The GPU implementation was achieved by assigning the parallel part of the code i
 |33554432 |79626 |15973 |4.985037 |11.5679 |
 
 ![](LabReport6pdf.005.png)
-*Figure 5 Speedup plot Size Vs Speedup:* 
+
+*Figure 5 Speedup plot Size Vs Speedup* 
 
 **Result Analysis:**
 
