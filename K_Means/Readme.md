@@ -14,19 +14,19 @@ The GPU implementation was achieved by assigning the parallel part of the code i
 
 **Results:** 
 
-![](LabReport6pdf.001.png)
+![](images/LabReport6pdf.001.png)
 
 *Figure 1: Clustering Input*** 
 
-![](LabReport6pdf.002.png)
+![](images/LabReport6pdf.002.png)
 
 *Figure 2: Clustering Output CPU* 
 
-![](LabReport6pdf.003.png)
+![](images/LabReport6pdf.003.png)
 
 *Figure 3: Clustering Output GPU* 
 
-![](LabReport6pdf.004.png)
+![](images/LabReport6pdf.004.png)
 
 *Figure 4: Output for size of 2^16 Table 1: Speedup* 
 
@@ -46,7 +46,7 @@ The GPU implementation was achieved by assigning the parallel part of the code i
 |16777216 |47642 |9586 |4.969956 |11.5828 |
 |33554432 |79626 |15973 |4.985037 |11.5679 |
 
-![](LabReport6pdf.005.png)
+![](images/LabReport6pdf.005.png)
 
 *Figure 5 Speedup plot Size Vs Speedup* 
 
